@@ -18,6 +18,9 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// TODO: API to upload, get, delete images
+// payload -> image_id, image, source (gallery, homepage, header, background)
+
 // Configure your email service.
 const transporter = nodemailer.createTransport({
   host: `${process.env.HOST}`, // e.g., 'Gmail', 'Outlook'
