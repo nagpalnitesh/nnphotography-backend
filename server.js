@@ -57,6 +57,48 @@ app.use("/api", photoRoutes);
 // TODO: API to upload, get, delete images
 // payload -> image_id, image, source (gallery, homepage, header, background)
 
+app.get("/api/gallery", async (req, res) => {
+  const username = "619793849217316";
+  const password = "vR6EvgfgkGusrI-ANm92HbVSwg4";
+  const basicAuth = "Basic " + btoa(username + ":" + password);
+  try {
+    const response = await fetch(
+      "https://api.cloudinary.com/v1_1/dhk0mr5qh/resources/image/tags/nnphotography-gallery?max_results=100",
+      {
+        headers: {
+          Authorization: basicAuth,
+        },
+      }
+    );
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+app.get("/api/home", async (req, res) => {
+  const username = "619793849217316";
+  const password = "vR6EvgfgkGusrI-ANm92HbVSwg4";
+  const basicAuth = "Basic " + btoa(username + ":" + password);
+  try {
+    const response = await fetch(
+      "https://api.cloudinary.com/v1_1/dhk0mr5qh/resources/image/tags/nnphotography?max_results=100",
+      {
+        headers: {
+          Authorization: basicAuth,
+        },
+      }
+    );
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 // Configure your email service.
 const transporter = nodemailer.createTransport({
   host: `${process.env.HOST}`, // e.g., 'Gmail', 'Outlook'
