@@ -3,7 +3,7 @@
 ![Express.js](https://img.shields.io/badge/Express.js-Backend-000000?logo=express&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?logo=mongodb&logoColor=white)
 ![Cloudinary](https://img.shields.io/badge/Cloudinary-Media-3448C5?logo=cloudinary&logoColor=white)
-![License](https://img.shields.io/github/license/nagpalnitesh/nnphotography-backend)
+![License](https://img.shields.io/github/license/nagpalnitesh/nnphotography-backend?cacheSeconds=300)
 ![Last Commit](https://img.shields.io/github/last-commit/nagpalnitesh/nnphotography-backend)
 ![Repo Size](https://img.shields.io/github/repo-size/nagpalnitesh/nnphotography-backend)
 
