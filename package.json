@@ -1,17 +1,29 @@
 {
   "name": "nnphotography-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend REST API for NNPhotography, built with Node.js, Express, MongoDB, and Cloudinary.",
   "main": "server.js",
+  "private": true,
   "scripts": {
-    "start": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "engines": {
-    "node": ">=14.20.1"
+    "node": ">=20"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "mongoose",
+    "backend",
+    "rest-api",
+    "photography",
+    "wildlife",
+    "cloudinary"
+  ],
+  "author": "Nitesh Nagpal",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
@@ -21,13 +33,14 @@
     "express-jwt": "^8.4.1",
     "express-validator": "^7.0.1",
     "formidable": "^3.5.1",
-    "i": "^0.3.7",
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
     "mongoose": "^8.1.1",
     "morgan": "^1.10.0",
     "nodemailer": "^9.0.3",
-    "nodemon": "^3.0.1",
     "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
