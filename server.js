@@ -68,10 +68,17 @@ app.get('/api/gallery', async (req, res) => {
         headers: {
           Authorization: basicAuth,
         },
-      }
+      },
     );
     const data = await response.json();
-    res.json(data);
+    const resources = data?.resources?.map((res) => ({
+      id: res.public_id.split('/').pop(),
+      url: res.secure_url,
+      width: res.width,
+      height: res.height,
+      format: res.format,
+    }));
+    res.json(resources);
   } catch (error) {
     console.error('Error fetching data:', error);
     res.status(500).json({ error: 'Internal Server Error' });
@@ -89,10 +96,17 @@ app.get('/api/home', async (req, res) => {
         headers: {
           Authorization: basicAuth,
         },
-      }
+      },
     );
     const data = await response.json();
-    res.json(data);
+    const resources = data?.resources?.map((res) => ({
+      id: res.public_id.split('/').pop(),
+      url: res.secure_url,
+      width: res.width,
+      height: res.height,
+      format: res.format,
+    }));
+    res.json(resources);
   } catch (error) {
     console.error('Error fetching data:', error);
     res.status(500).json({ error: 'Internal Server Error' });
