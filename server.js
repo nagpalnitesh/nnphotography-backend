@@ -63,7 +63,7 @@ app.get('/api/gallery', async (req, res) => {
   const basicAuth = 'Basic ' + btoa(username + ':' + password);
   try {
     const response = await fetch(
-      'https://api.cloudinary.com/v1_1/dhk0mr5qh/resources/image/tags/nnphotography-gallery?max_results=100',
+      'https://api.cloudinary.com/v1_1/dhk0mr5qh/resources/image/tags/nnphotography-gallery?max_results=1000',
       {
         headers: {
           Authorization: basicAuth,
@@ -77,6 +77,7 @@ app.get('/api/gallery', async (req, res) => {
       width: res.width,
       height: res.height,
       format: res.format,
+      folder: res.folder.split('/').pop(),
     }));
     res.json(resources);
   } catch (error) {
@@ -105,6 +106,7 @@ app.get('/api/home', async (req, res) => {
       width: res.width,
       height: res.height,
       format: res.format,
+      folder: res.folder.split('/').pop(),
     }));
     res.json(resources);
   } catch (error) {
